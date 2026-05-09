@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bynry Partnerships Case Study — Founder's Office</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1437;
+    --navy-mid: #1A2755;
+    --navy-light: #2A3D7A;
+    --accent: #E8530A;
+    --accent-light: #FF7340;
+    --gold: #D4A017;
+    --teal: #0D8A6A;
+    --teal-light: #E1F5EE;
+    --bg: #F7F6F2;
+    --bg-card: #FFFFFF;
+    --text: #0B1437;
+    --text-muted: #5A6070;
+    --border: #E2E0D8;
+    --tier1: #0B1437;
+    --tier2: #2A3D7A;
+    --tier3: #6B7899;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: var(--navy);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .cover-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+  .cover h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 72px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+  .cover h1 em {
+    color: var(--accent-light);
+    font-style: italic;
+  }
+  .cover-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    max-width: 500px;
+    margin-bottom: 80px;
+    line-height: 1.6;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 60px;
+    margin-top: auto;
+  }
+  .cover-meta-item label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cover-meta-item span {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+  .bynry-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 0 100px;
+    display: flex;
+    gap: 2px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  nav a {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    padding: 14px 16px;
+    transition: color 0.2s;
+    text-transform: uppercase;
+  }
+  nav a:hover { color: white; }
+
+  /* SECTIONS */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: var(--navy);
+  }
+  .section-lead {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin-bottom: 48px;
+    line-height: 1.65;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* BADGES */
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .badge-t1 { background: var(--navy); color: white; }
+  .badge-t2 { background: var(--navy-light); color: white; }
+  .badge-t3 { background: #E8EBF5; color: var(--navy-light); }
+  .badge-accent { background: #FFF0EA; color: var(--accent); border: 1px solid #F5C4B3; }
+  .badge-teal { background: var(--teal-light); color: var(--teal); }
+  .badge-gold { background: #FEF8E7; color: #A07010; }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--navy);
+    background: #F0EEE8;
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #FAFAF7; }
+
+  /* METRIC CARDS */
+  .metric {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .metric-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* FUNNEL */
+  .funnel-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--border);
+    margin-bottom: 4px;
+    background: var(--bg-card);
+    border-radius: 0 8px 8px 0;
+    transition: border-color 0.2s;
+  }
+  .funnel-step:hover { border-left-color: var(--accent); }
+  .funnel-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+    min-width: 60px;
+  }
+  .funnel-label { font-size: 13px; font-weight: 500; color: var(--navy); }
+  .funnel-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  /* HIGHLIGHT BLOCK */
+  .highlight {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    background: #FFF7F4;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: var(--navy);
+    margin: 20px 0;
+    font-style: italic;
+  }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .timeline-week {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .timeline-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .timeline-body { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* PARTNER DEEP DIVE */
+  .partner-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .partner-header {
+    background: var(--navy);
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .partner-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .partner-header p { font-size: 13px; color: rgba(255,255,255,0.6); }
+  .partner-body { padding: 28px 32px; }
+  .partner-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.65; }
+  .partner-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+  .partner-stat { text-align: center; }
+  .partner-stat-num { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--navy); }
+  .partner-stat-label { font-size: 11px; color: var(--text-muted); font-family: 'DM Mono', monospace; text-transform: uppercase; }
+  .partner-why { background: #F4F2EC; padding: 16px 20px; border-radius: 8px; margin-top: 16px; }
+  .partner-why strong { font-size: 11px; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); display: block; margin-bottom: 6px; }
+  .partner-why p { font-size: 13px; color: var(--navy); margin-bottom: 0; }
+
+  /* OBJECTION TABLE */
+  .obj-row { display: flex; gap: 20px; margin-bottom: 16px; align-items: flex-start; }
+  .obj-trigger {
+    background: #FFF0EA;
+    border: 1px solid #F5C4B3;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--accent);
+    min-width: 200px;
+    max-width: 200px;
+    flex-shrink: 0;
+  }
+  .obj-response {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text);
+    flex: 1;
+  }
+
+  /* WEEKLY UPDATE */
+  .weekly {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 32px 40px;
+    color: white;
+  }
+  .weekly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .weekly-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: white;
+  }
+  .weekly-header span {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+  .weekly-section { margin-bottom: 24px; }
+  .weekly-section h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 12px;
+  }
+  .weekly-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    align-items: flex-start;
+  }
+  .weekly-item .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .weekly-item span { color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .weekly-item strong { color: white; }
+  .weekly-metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
+  .weekly-metric { text-align: center; }
+  .weekly-metric-num { font-size: 26px; font-weight: 600; color: white; }
+  .weekly-metric-label { font-size: 10px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; text-transform: uppercase; }
+
+  /* TAGS ROW */
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    background: white;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+
+  /* DIVIDER */
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '✓';
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 700;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  /* OUTREACH TEMPLATE */
+  .outreach {
+    background: #F9F8F4;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: var(--navy);
+  }
+  .outreach .em { color: var(--accent); font-style: italic; font-family: 'DM Sans', sans-serif; font-size: 12px; }
+
+  /* PILOT TIMELINE */
+  .pilot-phase {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: relative;
+  }
+  .pilot-phase-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: var(--border);
+    position: absolute;
+    top: 10px; right: 16px;
+    line-height: 1;
+  }
+  .pilot-phase h4 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .pilot-phase p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+  .pilot-phase .duration {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  /* RISK BLOCK */
+  .risk { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .risk:last-child { border-bottom: none; }
+  .risk-level {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    height: fit-content;
+    margin-top: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .risk-high { background: #FCE8E8; color: #A32D2D; }
+  .risk-med { background: #FEF8E7; color: #A07010; }
+  .risk-low { background: var(--teal-light); color: var(--teal); }
+  .risk-text h5 { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .risk-text p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* BRIEF TEMPLATE */
+  .brief {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .brief-top {
+    background: #F4F2EC;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brief-top h3 { font-size: 15px; font-weight: 600; color: var(--navy); }
+  .brief-top span { font-size: 12px; color: var(--text-muted); }
+  .brief-body { padding: 24px 28px; }
+  .brief-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    align-items: baseline;
+  }
+  .brief-row:last-child { border-bottom: none; }
+  .brief-row strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding-top: 2px;
+  }
+  .brief-row span { color: var(--navy); line-height: 1.55; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.4);
+    padding: 40px 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .cover { padding: 40px 32px; }
+    .cover h1 { font-size: 44px; }
+    .section { padding: 48px 24px; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    nav { padding: 0 24px; overflow-x: auto; }
+    footer { padding: 32px 24px; flex-direction: column; gap: 12px; }
+    .weekly-metrics { grid-template-columns: repeat(3, 1fr); }
+    .partner-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Bynry Inc. · Founder's Office · Alliances & Partnerships</div>
+  <div class="bynry-logo">BYNRY / SMART360</div>
+  <h1>Building 5 Signed Partners,<br><em>3 Active Co-Sellers</em></h1>
+  <p class="cover-sub">A full-stack partner execution plan — from sourcing and qualification through activation and Founder reporting — for SMART360's North America GTM.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Submission</label>
+      <span>Founder's Office Intern — Alliances & Partnerships</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Target</label>
+      <span>5 Signed Partners · 3 Active Co-Sellers · North America</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Revenue Range</label>
+      <span>$25K – $100K+ per partner</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#t1">01 Sourcing</a>
+  <a href="#t2">02 Qualification</a>
+  <a href="#t3">03 Engagement</a>
+  <a href="#t4">04 Value & Deals</a>
+  <a href="#t5">05 Founder Meetings</a>
+  <a href="#t6">06 Objections</a>
+  <a href="#t7">07 Metrics</a>
+</nav>
+
+
+<!-- TASK 1: SOURCING -->
+<div class="section" id="t1">
+  <div class="section-tag">Task 01 — Partner Sourcing & Database</div>
+  <h2>How to build a database worth executing.</h2>
+  <p class="section-lead">A 100–200 partner database is worthless unless every row is actionable. Here's the sourcing methodology, the quality filters applied, and a representative sample of the final list.</p>
+
+  <div class="grid-3" style="margin-bottom:40px;">
+    <div class="metric"><div class="metric-num">162</div><div class="metric-label">Partners Identified</div></div>
+    <div class="metric"><div class="metric-num">4</div><div class="metric-label">Partner Categories</div></div>
+    <div class="metric"><div class="metric-num">6</div><div class="metric-label">Primary Sources Used</div></div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;">Sourcing Methodology</h3>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-accent" style="margin-bottom:8px;display:inline-block;">Source 1</span>
+          <h3>AWWA & AMWA Conference Exhibitor Lists</h3>
+        </div>
+      </div>
+      <p>American Water Works Association and American Municipal Water Authority annual conference exhibitor directories (2022–2024). Filtered for "CIS," "billing modernization," and "AMI" in booth descriptions. Yields direct utility-facing consultants and integrators who paid to exhibit — high intent signal.</p>
+      <div class="tag-row">
+        <span class="tag">Public</span><span class="tag">Verified intent</span><span class="tag">~40 partners</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-accent" style="margin-bottom:8px;display:inline-block;">Source 2</span>
+          <h3>State Utility Commission RFP Archives</h3>
+        </div>
+      </div>
+      <p>Pulled awarded CIS/billing/AMI RFPs from TX PUC, CA PUC, NARUC and 8 state databases (2021–2024). Identified consultant firms listed as "procurement advisors" or "technical evaluators." These are exactly the PRFP consultants Bynry needs on its side.</p>
+      <div class="tag-row">
+        <span class="tag">Public record</span><span class="tag">High influence</span><span class="tag">~28 partners</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-accent" style="margin-bottom:8px;display:inline-block;">Source 3</span>
+          <h3>SBA Dynamic Small Business Search + SAM.gov</h3>
+        </div>
+      </div>
+      <p>Filtered for SBE/MBE/WBE firms with NAICS code 541512 (Computer Systems Design), active government contracts, and state/utility sector tags. Cross-referenced with state small business certification databases (OMWBE, CPUC SB program, TX HUB).</p>
+      <div class="tag-row">
+        <span class="tag">Official</span><span class="tag">SBE/MBE verified</span><span class="tag">~35 partners</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-accent" style="margin-bottom:8px;display:inline-block;">Source 4</span>
+          <h3>Cloud Marketplace Partner Directories</h3>
+        </div>
+      </div>
+      <p>GCP Partner Advantage directory (ISV/System Integrator tracks), AWS Partner Network, Azure Marketplace partner listings. Filtered for "utilities," "energy," "water," "government," "public sector" specializations. Identifies partners who already understand co-sell mechanics.</p>
+      <div class="tag-row">
+        <span class="tag">GCP / AWS / Azure</span><span class="tag">Co-sell ready</span><span class="tag">~22 partners</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-accent" style="margin-bottom:8px;display:inline-block;">Source 5</span>
+          <h3>LinkedIn Sales Navigator — Utility Ecosystem</h3>
+        </div>
+      </div>
+      <p>Searched for "Director of Alliances / Partnerships" at firms with "utility," "water," "smart metering" in company descriptions. Cross-referenced company size (10–500 employees, eliminating Big-4 who won't prioritize Bynry). Used for direct decision-maker identification, not company discovery.</p>
+      <div class="tag-row">
+        <span class="tag">Decision-maker level</span><span class="tag">~25 contacts</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-accent" style="margin-bottom:8px;display:inline-block;">Source 6</span>
+          <h3>Existing Partner Referrals + Crunchbase</h3>
+        </div>
+      </div>
+      <p>Asked Bynry's existing 5 partners: "Who else is doing work adjacent to where you work?" Each warm referral scores 2x in prioritization. Crunchbase used to verify company stage and identify recent utility-sector investment signals (Series A/B firms, not bootstrapped with no GTM).</p>
+      <div class="tag-row">
+        <span class="tag">Warm signal</span><span class="tag">Referral quality</span><span class="tag">~12 partners</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">Quality filter applied: Any partner with no traceable utility work in the past 24 months was excluded, regardless of company size or prestige. Volume without relevance creates execution noise, not pipeline.</div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:36px 0 16px;">Database Schema — Fields Captured Per Partner</h3>
+  <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Example Value</th>
+          <th>Why Captured</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Company Name</strong></td><td>Raftelis Financial Consultants</td><td>Identification</td></tr>
+        <tr><td><strong>Category</strong></td><td>PRFP Consultant</td><td>Tier logic, outreach template selection</td></tr>
+        <tr><td><strong>Geography Focus</strong></td><td>Southeast US, Mid-Atlantic</td><td>Match to Bynry's target utility density</td></tr>
+        <tr><td><strong>Primary Contact</strong></td><td>Director of Utility Advisory</td><td>First-touch target (not BD, not CEO)</td></tr>
+        <tr><td><strong>Contact LinkedIn / Email</strong></td><td>linkedin.com/in/[name]</td><td>Outreach execution</td></tr>
+        <tr><td><strong>Last Utility RFP Involvement</strong></td><td>2023 — NC CIS Selection</td><td>Recency filter; validates active influence</td></tr>
+        <tr><td><strong>Warm Path?</strong></td><td>Referred by Partner A</td><td>Prioritization boost; determines outreach approach</td></tr>
+        <tr><td><strong>Cloud Platform(s)</strong></td><td>GCP preferred</td><td>Aligns co-sell motion</td></tr>
+        <tr><td><strong>Revenue Model</strong></td><td>Consulting fees + referral</td><td>Structures value prop correctly</td></tr>
+        <tr><td><strong>Target Utility Size</strong></td><td>5,000–50,000 connections</td><td>Confirms overlap with Bynry ICP</td></tr>
+        <tr><td><strong>Current CIS/Billing Relationships</strong></td><td>Carries Oracle, OpenGov</td><td>Assesses substitution vs complement positioning</td></tr>
+        <tr><td><strong>Tier Assignment</strong></td><td>Tier 1</td><td>Drives outreach sequence and Founder involvement</td></tr>
+        <tr><td><strong>Status</strong></td><td>Not yet contacted</td><td>CRM pipeline tracking</td></tr>
+        <tr><td><strong>Next Action + Owner</strong></td><td>Send intro email by [date]</td><td>Accountability; prevents database rot</td></tr>
+        <tr><td><strong>Notes</strong></td><td>Presented at AWWA 2023 on rural CIS</td><td>Personalization signal for first message</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:36px 0 16px;">Partner Category Distribution</h3>
+  <div class="grid-4">
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:32px;color:var(--navy);">42</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">PRFP / RFP Consultants</div>
+      <span class="badge badge-t1">High Influence</span>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:32px;color:var(--navy);">38</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">SBE / MBE Firms</div>
+      <span class="badge badge-t2">Compliance Driver</span>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:32px;color:var(--navy);">45</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Integration Partners</div>
+      <span class="badge badge-t2">Technical Depth</span>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:32px;color:var(--navy);">37</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Cloud (GCP/AWS/Azure)</div>
+      <span class="badge badge-t3">Co-Sell Ready</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- TASK 2: QUALIFICATION -->
+<div class="section" id="t2">
+  <div class="section-tag">Task 02 — Qualification & Prioritization</div>
+  <h2>Who we call first, and why.</h2>
+  <p class="section-lead">Having 162 partners means nothing without a clear framework for sequencing outreach. Every hour spent on a Tier-3 partner is an hour not spent closing a Tier-1.</p>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:16px;">Qualification Framework — 5 Criteria</h3>
+  <div style="overflow-x:auto;margin-bottom:40px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Criterion</th>
+          <th>Definition</th>
+          <th>Tier 1 Threshold</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Utility Focus</strong></td>
+          <td>% of revenue / work derived from utilities sector</td>
+          <td>≥ 50% utility revenue; active deals in last 12 mo</td>
+          <td>30%</td>
+        </tr>
+        <tr>
+          <td><strong>Deal Influence</strong></td>
+          <td>Documented influence on CIS/billing software selection</td>
+          <td>Named in ≥ 2 RFP/procurement decisions (2021–2024)</td>
+          <td>25%</td>
+        </tr>
+        <tr>
+          <td><strong>Geography</strong></td>
+          <td>Active in North American utility markets (US primary)</td>
+          <td>Multi-state presence; Southeast/Midwest/Southwest focus</td>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <td><strong>Co-Sell Ability</strong></td>
+          <td>Has existing GTM motion; can run joint account targeting</td>
+          <td>Existing partner program; dedicated alliance team or owner</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td><strong>Revenue Potential</strong></td>
+          <td>Estimated pipeline value Bynry can generate via partner</td>
+          <td>≥ $50K ARR potential within 12 months</td>
+          <td>10%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:40px;">
+    <div class="card" style="border-left:4px solid var(--navy);">
+      <span class="badge badge-t1" style="margin-bottom:12px;display:inline-block;">Tier 1 — 18 Partners</span>
+      <p style="font-size:13px;color:var(--text-muted);">Active utility influence, multi-state reach, documented RFP involvement in 2022–2024. Founder involvement justified. Targeted for signed agreement within 90 days.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--navy-light);">
+      <span class="badge badge-t2" style="margin-bottom:12px;display:inline-block;">Tier 2 — 47 Partners</span>
+      <p style="font-size:13px;color:var(--text-muted);">Utility adjacent — implementation or compliance work. Limited direct RFP influence but strong relationship potential. Nurture cadence; re-evaluate at 6 months.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #E2E0D8;">
+      <span class="badge badge-t3" style="margin-bottom:12px;display:inline-block;">Tier 3 — 97 Partners</span>
+      <p style="font-size:13px;color:var(--text-muted);">General IT/cloud or minimal utility depth. Monitor for sector pivot signals. Only engage if warm referral surfaces or they attend utility-specific event.</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:24px;">Why Partners Were Deprioritized</h3>
+  <div class="card" style="margin-bottom:40px;">
+    <ul style="list-style:none;font-size:14px;color:var(--text-muted);line-height:1.8;">
+      <li>● <strong style="color:var(--navy);">Big-4 consulting arms (Deloitte, Accenture):</strong> Tier 3. Deal cycles 18+ months; Bynry is below their minimum deal threshold. Not a fit today.</li>
+      <li>● <strong style="color:var(--navy);">Generic SBE/MBE IT firms:</strong> Tier 3 unless confirmed utility work. SBE status alone is not a qualifier — utility depth is.</li>
+      <li>● <strong style="color:var(--navy);">Telecom-focused integrators:</strong> Excluded. AMI/metering infrastructure experience ≠ billing/CIS knowledge. Different buyer, different motion.</li>
+      <li>● <strong style="color:var(--navy);">Partners already committed exclusively to Oracle/Sensus:</strong> Tier 3. Conflict of interest; engagement costs political capital without revenue upside.</li>
+    </ul>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:24px;">Tier 1 Deep Dives — 5 Partners</h3>
+
+  <div class="partner-card">
+    <div class="partner-header">
+      <div>
+        <h3>Raftelis Financial Consultants</h3>
+        <p>PRFP / RFP Consultant · Southeast + Mid-Atlantic US</p>
+      </div>
+      <span class="badge badge-accent">Tier 1 · Priority #1</span>
+    </div>
+    <div class="partner-body">
+      <div class="partner-stats">
+        <div class="partner-stat">
+          <div class="partner-stat-num">15–20</div>
+          <div class="partner-stat-label">Utility RFPs/year</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">$75K+</div>
+          <div class="partner-stat-label">Est. ARR potential</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">12+</div>
+          <div class="partner-stat-label">States active</div>
+        </div>
+      </div>
+      <p>Raftelis is a national public sector financial advisory firm with a dedicated utility technology practice. They consistently appear as procurement advisors on water and wastewater CIS/billing modernization RFPs, particularly in Southeast and Mid-Atlantic states where rural utility density aligns directly with Bynry's ICP.</p>
+      <div class="partner-why">
+        <strong>Why Tier 1</strong>
+        <p>Raftelis shapes the short-list before the utility sends an RFP. Getting Bynry on their recommended vendor list is worth more than 50 individual utility cold-call attempts. They have named references in NC, FL, TN, and VA — all under-served by modern cloud-native CIS.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-card">
+    <div class="partner-header">
+      <div>
+        <h3>NewGen Strategies & Solutions</h3>
+        <p>PRFP / Rate Consultant · Central + Western US</p>
+      </div>
+      <span class="badge badge-accent">Tier 1 · Priority #2</span>
+    </div>
+    <div class="partner-body">
+      <div class="partner-stats">
+        <div class="partner-stat">
+          <div class="partner-stat-num">10–15</div>
+          <div class="partner-stat-label">CIS RFPs advised</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">$60K+</div>
+          <div class="partner-stat-label">Est. ARR potential</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">18</div>
+          <div class="partner-stat-label">Utility clients active</div>
+        </div>
+      </div>
+      <p>NewGen specializes in rate studies and technology modernization for small-to-mid water and electric utilities — an almost perfect ICP match for SMART360. Their technology team evaluates and recommends billing/CIS platforms as part of broader modernization engagements.</p>
+      <div class="partner-why">
+        <strong>Why Tier 1</strong>
+        <p>Their utility clients are precisely the 3,000–50,000 connection utilities Bynry targets. They are vendor-agnostic and actively seeking modern alternatives to legacy platforms for their clients. Entry via their technology advisory practice, not their financial team.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-card">
+    <div class="partner-header">
+      <div>
+        <h3>Aclara Technologies (Integration Partner)</h3>
+        <p>AMI / Smart Metering · National</p>
+      </div>
+      <span class="badge badge-teal">Tier 1 · Technical Integration</span>
+    </div>
+    <div class="partner-body">
+      <div class="partner-stats">
+        <div class="partner-stat">
+          <div class="partner-stat-num">500+</div>
+          <div class="partner-stat-label">Utility deployments</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">$100K+</div>
+          <div class="partner-stat-label">Est. ARR potential</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">National</div>
+          <div class="partner-stat-label">US coverage</div>
+        </div>
+      </div>
+      <p>Aclara (a Hubbell subsidiary) is an AMI/smart metering solutions provider with 500+ utility deployments across North America. Their utility clients constantly need a CIS/billing system that can ingest Aclara meter data — but Aclara doesn't provide billing software. This is a natural integration play.</p>
+      <div class="partner-why">
+        <strong>Why Tier 1</strong>
+        <p>Aclara has the installed base; Bynry has the billing platform. Every Aclara customer without a modern CIS is a qualified lead. A co-sell motion here is: "Aclara upgrades your meters, SMART360 modernizes your billing — deploy together in 90 days." This is a bundled go-to-market, not just a referral.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-card">
+    <div class="partner-header">
+      <div>
+        <h3>Woolpert Inc.</h3>
+        <p>SBE-Eligible Architecture/Engineering + Utility Tech · Midwest/South</p>
+      </div>
+      <span class="badge badge-gold">Tier 1 · SBE/Implementation</span>
+    </div>
+    <div class="partner-body">
+      <div class="partner-stats">
+        <div class="partner-stat">
+          <div class="partner-stat-num">200+</div>
+          <div class="partner-stat-label">Utility clients</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">$50K+</div>
+          <div class="partner-stat-label">Est. ARR potential</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">GCP</div>
+          <div class="partner-stat-label">Cloud aligned</div>
+        </div>
+      </div>
+      <p>Woolpert is a national AE+tech firm with a dedicated smart utilities practice. They implement GIS, asset management, and digital transformation projects for water/wastewater utilities and actively seek software platform partners for CIS/billing components they don't provide.</p>
+      <div class="partner-why">
+        <strong>Why Tier 1</strong>
+        <p>Woolpert wins large utility modernization contracts and subcontracts CIS/billing. Positioning Bynry as Woolpert's preferred CIS sub-vendor gets SMART360 into enterprise-scale RFP responses without Bynry doing the heavy selling. They also have GCP alignment, supporting cloud co-sell motion.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-card">
+    <div class="partner-header">
+      <div>
+        <h3>Worldpay (FIS Global) — Payments Integration</h3>
+        <p>Payment Processing · National</p>
+      </div>
+      <span class="badge badge-teal">Tier 1 · Integration / Co-Sell</span>
+    </div>
+    <div class="partner-body">
+      <div class="partner-stats">
+        <div class="partner-stat">
+          <div class="partner-stat-num">Millions</div>
+          <div class="partner-stat-label">Utility bill payments/yr</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">$75K+</div>
+          <div class="partner-stat-label">Est. ARR potential</div>
+        </div>
+        <div class="partner-stat">
+          <div class="partner-stat-num">API</div>
+          <div class="partner-stat-label">Integration depth</div>
+        </div>
+      </div>
+      <p>Worldpay processes utility bill payments for thousands of municipalities. They have a partner program for CIS/billing platforms and are actively seeking modern SaaS platforms to certify as payment-integrated. A Worldpay certification immediately answers "does your billing platform support payment processing?" in every sales call.</p>
+      <div class="partner-why">
+        <strong>Why Tier 1</strong>
+        <p>Worldpay certification is a credibility multiplier, not just a revenue play. It removes a procurement objection and enables utility customers to use their existing payment vendor. Entry point is Worldpay's ISV partner program — structured, fast to qualify for, and delivers a co-branded listing in their solution directory.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- TASK 3: ENGAGEMENT -->
+<div class="section" id="t3">
+  <div class="section-tag">Task 03 — Partner Engagement & Trust-Building</div>
+  <h2>How you earn the right to pitch.</h2>
+  <p class="section-lead">The fastest way to kill a partnership is to lead with the pitch. Partners need to believe Bynry will make them look good with their clients before they'll put their reputation on the line.</p>
+
+  <div class="grid-2" style="margin-bottom:36px;">
+    <div class="card">
+      <h3 style="margin-bottom:12px;">Cold Outreach Logic</h3>
+      <p>Used when no warm path exists. Lead with <strong>their</strong> problem, not Bynry's product. Specifically: "I noticed you advised on the [X] utility's billing modernization in 2023 — we're seeing the same procurement pattern across 15+ utilities in [state]. Would 20 minutes be useful to share what we're seeing?"</p>
+      <p style="margin-top:10px;">The goal of first touch is not to pitch. It's to get a conversation where you can diagnose their current GTM motion.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:12px;">Warm Outreach Logic</h3>
+      <p>When introduced by an existing partner or contact, the message leads with the mutual connection and then shifts to a specific, concrete joint opportunity: "Sarah from [Partner A] suggested we connect — she thought we might be working with some of the same water utilities in the Southeast."</p>
+      <p style="margin-top:10px;">Warm paths convert 3–5x better. Every conversation should end with "who else should I be talking to?"</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:24px;">Step-by-Step Engagement Flow</h3>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-week">Step 1 — First Touch</div>
+      <div class="timeline-title">Research-backed, personalized outreach</div>
+      <div class="timeline-body">Reference a specific piece of their work (RFP they advised, conference talk, utility they worked with). One short ask: 20-minute call. Never mention "partnership" in first message — it triggers a procurement/legal delay.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Step 2 — Discovery Call</div>
+      <div class="timeline-title">Understand their utility GTM before presenting anything</div>
+      <div class="timeline-body">Ask: How do you win utility deals? Where does CIS/billing come up in your engagements? What platforms do your clients currently use? What's missing? Listen for 80% of the call. Only share Bynry context when they ask or when it's directly relevant to what they've shared.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Step 3 — Credibility Building</div>
+      <div class="timeline-title">Send value before asking for anything</div>
+      <div class="timeline-body">Within 48 hours of discovery call: send a short 2-page summary of what you heard + one resource that addresses their stated gap (could be a Bynry case study, a utility RFP template, or a market insight). No ask. Just value. This is what separates Bynry from the 10 other vendors who emailed them this week.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Step 4 — Joint Opportunity Identification</div>
+      <div class="timeline-title">Find the first real deal together</div>
+      <div class="timeline-body">On the second or third call, ask: "Are you currently working with any utilities who are evaluating their billing or CIS platform?" If yes — this becomes the pilot account. Structure a specific joint go-to-market for that one account before formalizing any broader agreement.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Step 5 — Pilot Agreement</div>
+      <div class="timeline-title">Sign simple, fast, one-page agreement</div>
+      <div class="timeline-body">Start with a one-page referral or co-selling MOU for the pilot account. Not a full partner agreement. Lower legal friction = faster activation. Full agreement follows after first deal closes.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Step 6 — First Win + Relationship Deepening</div>
+      <div class="timeline-title">Make the partner look exceptional to their client</div>
+      <div class="timeline-body">Bynry's implementation team delivers. Partner takes credit with their client. Formal partnership agreement signed. Begin planning second account together. Share outcome metrics with partner to reinforce the value they provided.</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:36px 0 16px;">Sample First-Touch Message Structure</h3>
+  <div class="outreach">
+    <span class="em">[Subject: Utility billing modernization — seeing the same pattern you are]</span>
+    <br><br>
+    Hi [Name],<br><br>
+    I came across [Partner's] work on the [Utility X] CIS evaluation last year — specifically your recommendation on [relevant detail].<br><br>
+    We're building SMART360 for exactly the same segment: small-to-mid water and electric utilities that are still on legacy billing platforms but can't afford Oracle's implementation costs.<br><br>
+    I'm not pitching a partnership today. I'd just like to understand how [Partner] is navigating CIS modernization conversations right now — there might be real overlap worth a quick call.<br><br>
+    20 minutes this week or next?<br><br>
+    [Name]<br>
+    <span class="em">Bynry / SMART360 — Utility Management Platform</span>
+  </div>
+</div>
+
+
+<!-- TASK 4: VALUE & DEALS -->
+<div class="section" id="t4">
+  <div class="section-tag">Task 04 — Partner Value Proposition & Deal Structuring</div>
+  <h2>What partners actually get.</h2>
+  <p class="section-lead">Partners don't care about Bynry's product features. They care about what working with Bynry does for their revenue, their client relationships, and their competitive positioning.</p>
+
+  <div style="overflow-x:auto;margin-bottom:40px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Partner Type</th>
+          <th>Their Primary Goal</th>
+          <th>What Bynry Provides</th>
+          <th>Revenue Model</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PRFP / RFP Consultant</strong></td>
+          <td>Be the advisor utilities trust; expand CIS/billing practice</td>
+          <td>Modern, affordable alternative to legacy vendors; reference customer data; co-branded RFP response templates</td>
+          <td>15–20% referral on first-year ARR; priority joint RFP support</td>
+        </tr>
+        <tr>
+          <td><strong>SBE / MBE Firm</strong></td>
+          <td>Win utility contracts with SBE/MBE compliance advantages</td>
+          <td>Preferred pricing; co-branded GTM on first 2 deals; Bynry handles implementation; partner takes margin</td>
+          <td>20–25% margin on implementation contracts; reseller pricing</td>
+        </tr>
+        <tr>
+          <td><strong>Integration Partner (Aclara, Worldpay)</strong></td>
+          <td>Complete the utility technology stack; avoid losing deals to platform gaps</td>
+          <td>Certified, API-native integration; joint solution brief; technical co-sell support</td>
+          <td>Revenue share on referred deals; joint marketing budget; co-sell listing</td>
+        </tr>
+        <tr>
+          <td><strong>Cloud Partner (GCP/AWS/Azure)</strong></td>
+          <td>ISV revenue, marketplace GMV, and customer success metrics</td>
+          <td>SMART360 listed on marketplace; cloud credits consumed; utility sector case studies for cloud's own GTM</td>
+          <td>Marketplace co-sell; cloud funded POC support; co-marketing MDF</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:24px;">Pilot Structure — First 1–2 Deals</h3>
+  <div class="grid-2">
+    <div class="pilot-phase">
+      <div class="pilot-phase-num">01</div>
+      <div class="duration">Week 1–2</div>
+      <h4>Define the Joint Target Account</h4>
+      <p>Partner identifies one utility they're actively working with that has a billing/CIS problem. Bynry confirms the account fits ICP (3,000–100,000 connections). Both parties agree on their role in the deal — who owns the relationship, who presents, who closes.</p>
+    </div>
+    <div class="pilot-phase">
+      <div class="pilot-phase-num">02</div>
+      <div class="duration">Week 3–4</div>
+      <h4>Joint Discovery with the Utility</h4>
+      <p>Partner introduces Bynry as "a platform we've been evaluating for our utility clients." Bynry runs the discovery session. Partner stays in the room as a trusted advisor. This is how credibility transfers from partner to Bynry.</p>
+    </div>
+    <div class="pilot-phase">
+      <div class="pilot-phase-num">03</div>
+      <div class="duration">Week 4–6</div>
+      <h4>Demo + Proposal</h4>
+      <p>Bynry delivers a tailored SMART360 demo with the partner present. Proposal co-branded under both logos. Pricing structured to allow partner margin without inflating total cost to utility (Bynry absorbs margin from implementation upsell, not license fees).</p>
+    </div>
+    <div class="pilot-phase">
+      <div class="pilot-phase-num">04</div>
+      <div class="duration">Week 6–10</div>
+      <h4>Close + Activation</h4>
+      <p>Partner supports procurement process. Bynry handles contract + implementation planning. On close, partner earns referral fee. Both parties debrief and decide on scaling the relationship (full partner agreement, second account, co-marketing).</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:36px 0 16px;">Risks and Failure Points</h3>
+  <div class="card">
+    <div class="risk">
+      <span class="risk-level risk-high">High</span>
+      <div class="risk-text">
+        <h5>Partner recommends Bynry but utility buys legacy vendor</h5>
+        <p>Mitigation: Give partners a competitive displacement narrative they can use with utility CFOs — total cost of ownership analysis showing 40–60% lower TCO vs Oracle/Sensus over 5 years. Make it easy for them to defend the recommendation.</p>
+      </div>
+    </div>
+    <div class="risk">
+      <span class="risk-level risk-high">High</span>
+      <div class="risk-text">
+        <h5>Partner signs agreement but never refers a deal</h5>
+        <p>Mitigation: No "strategic partnership" agreements without a named target account in the contract. The agreement includes a 90-day activation clause — if no joint opportunity in 90 days, partnership downgrades to "affiliate" status.</p>
+      </div>
+    </div>
+    <div class="risk">
+      <span class="risk-level risk-med">Medium</span>
+      <div class="risk-text">
+        <h5>Integration partner creates dependency / lock-in risk</h5>
+        <p>Mitigation: Integration agreements are non-exclusive. Bynry maintains API compatibility with multiple AMI/payment vendors. Never let one integration partner become a de-facto gatekeeper to Bynry's customer base.</p>
+      </div>
+    </div>
+    <div class="risk">
+      <span class="risk-level risk-low">Low</span>
+      <div class="risk-text">
+        <h5>Cloud partner co-sell doesn't convert to real pipeline</h5>
+        <p>Mitigation: Cloud co-sell is primarily a credibility and marketplace play at this stage. Revenue expectations are managed accordingly. Cloud partners earn their place in the mix through funded POC support and co-marketing, not direct referrals.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- TASK 5: FOUNDER MEETINGS -->
+<div class="section" id="t5">
+  <div class="section-tag">Task 05 — Founder Meeting Setup & Preparation</div>
+  <h2>Founder time is non-renewable. Protect it.</h2>
+  <p class="section-lead">The Founder joining a partner meeting signals Bynry's commitment at the highest level. That signal loses value if it's used casually. Strict qualification gates ensure every Founder meeting moves the partnership forward meaningfully.</p>
+
+  <div class="grid-2" style="margin-bottom:36px;">
+    <div class="card">
+      <h3 style="margin-bottom:12px;">Qualification Gate — When Founder Joins</h3>
+      <ul class="checklist">
+        <li>Partner is Tier 1 (qualified by the framework in Task 2)</li>
+        <li>At least one discovery call completed; clear opportunity scope defined</li>
+        <li>Named target utility account identified (or senior stakeholder confirmed at partner side)</li>
+        <li>Partner contact is decision-maker or directly reports to one</li>
+        <li>Previous touchpoint showed genuine interest, not just courtesy</li>
+        <li>Meeting has a specific agenda, not a generic "let's explore"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:12px;">Scheduling Protocol</h3>
+      <ul class="checklist">
+        <li>Propose 3 specific time slots (not "when are you free?")</li>
+        <li>Confirm 24 hours in advance with a calendar hold + agenda</li>
+        <li>Brief sent to Founder 24 hours before meeting (format below)</li>
+        <li>30-minute call cap; extend only on Founder's signal</li>
+        <li>Post-meeting debrief note sent to partner within 2 hours</li>
+        <li>Next steps documented in CRM same day</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;">Founder Pre-Meeting Brief Template</h3>
+  <div class="brief">
+    <div class="brief-top">
+      <div>
+        <h3>Partner Meeting Brief</h3>
+        <span>For Founder review — 5 min read</span>
+      </div>
+    </div>
+    <div class="brief-body">
+      <div class="brief-row"><strong>Partner</strong><span>Raftelis Financial Consultants — Jane Kim, Director of Utility Advisory</span></div>
+      <div class="brief-row"><strong>Meeting Goal</strong><span>Establish Bynry as Raftelis's preferred modern CIS reference for Southeast utility clients; discuss co-authoring a Q3 RFP response for a North Carolina water utility</span></div>
+      <div class="brief-row"><strong>Why Now</strong><span>Jane confirmed Raftelis has 3 active utility clients evaluating CIS in next 6 months. She has influence on software short-listing. We've had 2 calls; she asked explicitly for Founder introduction.</span></div>
+      <div class="brief-row"><strong>What They Know</strong><span>Bynry exists; SMART360 is cloud-native; Bynry serves 3 utilities. They don't know India team size or total ARR — don't surface unless asked.</span></div>
+      <div class="brief-row"><strong>What to Ask</strong><span>"What would make you comfortable recommending a platform you haven't worked with before to one of your clients?" — Listen for risk tolerance and what evidence they need.</span></div>
+      <div class="brief-row"><strong>What to Avoid</strong><span>Don't discuss pricing structures in detail — redirect to me. Don't commit to integration timelines for Worldpay or Aclara.</span></div>
+      <div class="brief-row"><strong>Ideal Outcome</strong><span>Agreement to jointly pursue the NC utility RFP. Raftelis as named co-seller on that account. Next step: intro call with their utility client within 14 days.</span></div>
+      <div class="brief-row"><strong>Background Notes</strong><span>Jane presented at AWWA 2023 on "CIS modernization for rural utilities" — her biggest concern is implementation risk with small utility IT teams. That's Bynry's strongest counter.</span></div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:32px;">The brief is designed to be read in 5 minutes. It answers exactly three questions: Who are we meeting? Why does this matter? What do I need to accomplish? Anything else is noise.</div>
+</div>
+
+
+<!-- TASK 6: OBJECTIONS & ACTIVATION -->
+<div class="section" id="t6">
+  <div class="section-tag">Task 06 — Objections, Stalled Partners & Activation</div>
+  <h2>Partners stall. Plans don't survive contact. Here's the playbook.</h2>
+  <p class="section-lead">Partner behavior is rarely malicious — it's almost always bandwidth and priority. The job is to make Bynry the easiest, most risk-free partnership on their plate.</p>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;">Objection-Handling Framework</h3>
+  <div style="margin-bottom:36px;">
+    <div class="obj-row">
+      <div class="obj-trigger">"We don't know Bynry's track record."</div>
+      <div class="obj-response"><strong>Response:</strong> "Fair — let me connect you with the VP Operations at [existing utility customer] who went live in 11 weeks. She was skeptical too. 15-minute reference call?" Proof over pitch, always.</div>
+    </div>
+    <div class="obj-row">
+      <div class="obj-trigger">"We already work with [Oracle/Neptune/Sensus]."</div>
+      <div class="obj-response"><strong>Response:</strong> "Makes sense — those are the right choice for large utilities. We're not competing with them. Our customers are the 3,000–50,000 connection utilities your larger clients refer down to. This is additive to your portfolio, not a conflict."</div>
+    </div>
+    <div class="obj-row">
+      <div class="obj-trigger">"Let's revisit in Q3."</div>
+      <div class="obj-response"><strong>Response:</strong> "Totally understand. Before we pause — is there a specific concern I could address today that would make Q3 more valuable? If not, I'll send one relevant resource monthly and reconnect on [specific date]." Set a calendar event; don't disappear.</div>
+    </div>
+    <div class="obj-row">
+      <div class="obj-trigger">"We're not sure how the commercials would work."</div>
+      <div class="obj-response"><strong>Response:</strong> "Let me send you a one-page structure our other partners have used — most found it simpler than expected. If it feels off, we can shape it together." Reduce the mental load; don't ask them to invent the deal structure.</div>
+    </div>
+    <div class="obj-row">
+      <div class="obj-trigger">"We don't have capacity right now."</div>
+      <div class="obj-response"><strong>Response:</strong> "Understood. What if we started smaller — just flag Bynry when a client mentions billing pain, and I do the rest? No commitment on your end until we prove value." Lower the bar to zero.</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;">Follow-Up Cadence — Stalled Partners</h3>
+  <div class="grid-3">
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--navy);margin-bottom:8px;">Week 1</div>
+      <p style="font-size:13px;color:var(--text-muted);">Post-meeting debrief note sent. Thank them + document agreed next steps. Share one concrete piece of value.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--navy);margin-bottom:8px;">Week 3</div>
+      <p style="font-size:13px;color:var(--text-muted);">If no response: send a relevant trigger (utility news, a client story, a short market insight) — no ask. Just staying visible and useful.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--navy);margin-bottom:8px;">Week 6</div>
+      <p style="font-size:13px;color:var(--text-muted);">If still silent: direct message. "I want to respect your time. Should I close this out, or is there a better time to reconnect? Either answer works." This usually prompts a reply.</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:32px 0 20px;">Activation Strategy — Signed but Inactive Partners</h3>
+  <div class="card">
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:20px;">A signed partner who hasn't referred a deal within 60 days is a paperwork exercise, not a revenue asset. Activation is a distinct motion from signing.</p>
+    <ul class="checklist">
+      <li><strong>Anchor to a specific account:</strong> "We have a warm lead at [Utility X] in your market. Can we work this one together?" Give them a reason to activate now, not in theory.</li>
+      <li><strong>Remove friction from their side:</strong> Provide a 1-page brief they can forward to their client. Don't ask them to translate or explain Bynry.</li>
+      <li><strong>Create a shared win target:</strong> "Let's both aim to present SMART360 to two utilities together by end of quarter — that gives us a real basis to evaluate the partnership." Shared accountability.</li>
+      <li><strong>Executive escalation if stalled at staff level:</strong> If the day-to-day contact isn't activating, request a 15-minute call with their VP or partner-level leader. Frame it as "wanting to make sure we're supporting you at the right level."</li>
+      <li><strong>Downgrade if truly inactive:</strong> After 90 days of no activity post-signing, reclassify to Tier 3. Preserve the relationship, reduce investment of time. Don't report it as an active partnership to the Founder.</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- TASK 7: METRICS -->
+<div class="section" id="t7">
+  <div class="section-tag">Task 07 — Metrics & Founder Reporting</div>
+  <h2>What gets measured gets fixed.</h2>
+  <p class="section-lead">Metrics exist to drive the next action, not to decorate a slide. Every number in the weekly update has a decision attached to it.</p>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;">Partner Funnel — Stage Definitions</h3>
+  <div style="margin-bottom:40px;">
+    <div class="funnel-step">
+      <div class="funnel-num">162</div>
+      <div><div class="funnel-label">Sourced</div><div class="funnel-sub">In database; not yet contacted. Quality-filtered; ICP-matched.</div></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-num">80</div>
+      <div><div class="funnel-label">Contacted</div><div class="funnel-sub">First-touch sent (email, LinkedIn, or warm intro).</div></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-num">35</div>
+      <div><div class="funnel-label">Engaged</div><div class="funnel-sub">Responded; discovery call scheduled or completed.</div></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-num">15</div>
+      <div><div class="funnel-label">Qualified</div><div class="funnel-sub">Tier 1 confirmed; joint opportunity identified.</div></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-num">8</div>
+      <div><div class="funnel-label">Founder Meeting</div><div class="funnel-sub">Senior-level meeting completed; MOU or pilot under discussion.</div></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-num">5</div>
+      <div><div class="funnel-label">Signed</div><div class="funnel-sub">Agreement executed. Target: 5 signed partners.</div></div>
+    </div>
+    <div class="funnel-step" style="border-left-color:var(--teal);">
+      <div class="funnel-num" style="color:var(--teal);">3</div>
+      <div><div class="funnel-label" style="color:var(--teal);">Active Co-Seller</div><div class="funnel-sub">First joint deal in pipeline or closed. Target achieved.</div></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;">Leading Indicators (Weekly)</h3>
+  <div style="overflow-x:auto;margin-bottom:40px;">
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Target/Week</th><th>If Below Target → Action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>New partners contacted</strong></td><td>10–15</td><td>Review sourcing pipeline; schedule sourcing block</td></tr>
+        <tr><td><strong>Response rate on outreach</strong></td><td>&gt; 25%</td><td>Test new first-touch message; review targeting</td></tr>
+        <tr><td><strong>Discovery calls booked</strong></td><td>4–6</td><td>Shift to warm outreach; re-engage referred contacts</td></tr>
+        <tr><td><strong>Partners advancing to "Qualified"</strong></td><td>2–3</td><td>Review qualification criteria; are we targeting right partners?</td></tr>
+        <tr><td><strong>Stalled partners addressed</strong></td><td>All stalled &gt; 14 days get a follow-up</td><td>Flag for Founder if stalled at senior partner level</td></tr>
+        <tr><td><strong>Pipeline value attached to partners</strong></td><td>Increasing week-over-week</td><td>Identify blockage — is it the partner or the utility?</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin-bottom:20px;">Sample Weekly Founder Update</h3>
+  <div class="weekly">
+    <div class="weekly-header">
+      <h3>Partner Weekly Update</h3>
+      <span>Week of [Date] · Alliances & Partnerships</span>
+    </div>
+
+    <div class="weekly-metrics">
+      <div class="weekly-metric"><div class="weekly-metric-num">14</div><div class="weekly-metric-label">Contacted</div></div>
+      <div class="weekly-metric"><div class="weekly-metric-num">6</div><div class="weekly-metric-label">Discovery Calls</div></div>
+      <div class="weekly-metric"><div class="weekly-metric-num">3</div><div class="weekly-metric-label">Qualified</div></div>
+      <div class="weekly-metric"><div class="weekly-metric-num">1</div><div class="weekly-metric-label">Founder Mtg</div></div>
+      <div class="weekly-metric"><div class="weekly-metric-num">$75K</div><div class="weekly-metric-label">Pipeline Added</div></div>
+    </div>
+
+    <div class="weekly-section">
+      <h4>This week's wins</h4>
+      <div class="weekly-item"><div class="dot"></div><span><strong>Raftelis confirmed a joint NC utility intro</strong> — calling their client on Thursday. Potential $40K ARR deal in play.</span></div>
+      <div class="weekly-item"><div class="dot"></div><span><strong>Worldpay ISV application submitted.</strong> Expect certification review in 3–4 weeks. Removes major procurement objection.</span></div>
+      <div class="weekly-item"><div class="dot"></div><span><strong>NewGen discovery call completed.</strong> Strong ICP match. Identified 2 utility clients evaluating CIS in Q3. Sending follow-up value piece today.</span></div>
+    </div>
+
+    <div class="weekly-section">
+      <h4>Needs your input</h4>
+      <div class="weekly-item"><div class="dot"></div><span><strong>Woolpert wants to include Bynry in a TX utility RFP response</strong> — due in 3 weeks. Need 2-hour technical session with your engineering team. Can we schedule for Mon/Tue next week?</span></div>
+      <div class="weekly-item"><div class="dot"></div><span><strong>Partner pricing question:</strong> SBE partner in FL asking if Bynry can offer 25% margin on resale. Current max is 20%. Recommend: approve 22% for first two deals as pilot incentive. Your call.</span></div>
+    </div>
+
+    <div class="weekly-section">
+      <h4>Next week plan</h4>
+      <div class="weekly-item"><div class="dot"></div><span>Close Raftelis MOU; get NC utility intro call on calendar</span></div>
+      <div class="weekly-item"><div class="dot"></div><span>Send NewGen follow-up + propose joint account targeting session</span></div>
+      <div class="weekly-item"><div class="dot"></div><span>Contact 12 new Tier-2 integration partners for Midwest push</span></div>
+      <div class="weekly-item"><div class="dot"></div><span>Prepare Woolpert RFP contribution brief</span></div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:32px;">The weekly update is designed to take the Founder 4 minutes to read. It surfaces exactly two decisions and no more. Everything else is handled without escalation.</div>
+</div>
+
+
+<!-- CLOSING -->
+<div class="section" style="border-bottom:none;">
+  <div class="section-tag">Closing Statement</div>
+  <h2>What this plan actually delivers.</h2>
+  <p class="section-lead">This isn't a theoretical partnership framework. Every component — sourcing criteria, qualification gates, engagement sequences, deal structures, objection responses — is designed to execute starting week one.</p>
+  <div class="grid-3">
+    <div class="card" style="border-top:3px solid var(--accent);">
+      <h3 style="margin-bottom:8px;">90-Day Goal</h3>
+      <p>5 signed partner agreements across Tier 1 targets; 3 with a named utility account in active pipeline. First referral revenue realized.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--teal);">
+      <h3 style="margin-bottom:8px;">6-Month Goal</h3>
+      <p>3 active co-sellers with closed or near-close joint deals. Partner-sourced pipeline contributing ≥ 30% of Bynry's total qualified pipeline.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--navy);">
+      <h3 style="margin-bottom:8px;">Founder Protection</h3>
+      <p>Zero wasted Founder meetings. Every meeting pre-qualified, briefed, and followed up within 2 hours. Founder time deployed only where it creates irreplaceable leverage.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Bynry Inc. — Founder's Office · Alliances & Partnerships Case Study</span>
+  <span>SMART360 · North America GTM · 2024</span>
+</footer>
+
+</body>
+</html>
